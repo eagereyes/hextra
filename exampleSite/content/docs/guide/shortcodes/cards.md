@@ -37,15 +37,13 @@ linkTitle: Cards
 
 ## Card Parameters
 
-| Parameter  | Description                                                     |
-|------------|-----------------------------------------------------------------|
-| `link`     | URL (internal or external).                                     |
-| `title`    | Title heading for the card.                                     |
-| `subtitle` | Subtitle heading (supports Markdown).                           |
-| `icon`     | Name of the icon.                                               |
-| `tag`      | Text in tag.                                                    |
-| `tagType`  | Type of the tag: default (gray), `info`, `warning` and `error`. |
-  
+| Parameter   | Description                                                                            |
+|-------------|----------------------------------------------------------------------------------------|
+| `link`      | URL (internal or external).                                                            |
+| `title`     | Title heading for the card.                                                            |
+| `subtitle`  | Subtitle heading (supports Markdown).                                                  |
+| `icon`      | Name of the icon. See [icons]({{% relRef "icon" %}}) for more information.             |
+
 ## Image Card
 
 Additionally, the card supports adding image and processing through these parameters:
@@ -72,20 +70,30 @@ For more on Hugo's built in image processing commands, methods, and options see 
 
 Card supports adding tags which could be useful to show extra status information.
 
+| Parameter   | Description                                                                            |
+|-------------|----------------------------------------------------------------------------------------|
+| `tag`       | Text in tag.                                                                           |
+| `tagColor`  | Color of the tag. See [badges]({{% relRef "others/#badges" %}}) for more information.  |
+| `tagIcon`   | Icon of the tag. See [badges]({{% relRef "others/#badges" %}}) for more information.   |
+| `tagBorder` | Border of the tag. See [badges]({{% relRef "others/#badges" %}}) for more information. |
+
 {{< cards >}}
   {{< card link="../callout" title="Card with default tag" tag="tag text" >}}
-  {{< card link="../callout" title="Card with error tag" tag="tag text" tagType="error" >}}
-  {{< card link="../callout" title="Card with info tag" tag="tag text" tagType="info" >}}
-  {{< card link="../callout" title="Card with warning tag" tag="tag text" tagType="warning" >}}
-  {{< card link="/" title="Image Card" image="https://github.com/user-attachments/assets/71b7e3ec-1a8d-4582-b600-5425c6cc0407" subtitle="Internet Image" tag="tag text" tagType="error" >}}
+  {{< card link="../callout" title="Card with red tag" tag="tag text" tagColor="red" >}}
+  {{< card link="../callout" title="Card with blue tag" tag="tag text" tagColor="blue" >}}
+  {{< card link="../callout" title="Card with yellow tag" tag="tag text" tagColor="yellow" tagIcon="sparkles" tagBorder=false >}}
+  {{< card link="/" title="Image Card" image="/images/card-image-unprocessed.jpg" subtitle="Image" tag="tag text" tagColor="green" >}}
+  {{< card link="/" title="Image Card" image="images/space.jpg" subtitle="Image" tag="tag text" tagColor="purple" tagIcon="sparkles" tagBorder=false >}}
 {{< /cards >}}
 
 ```
 {{</* cards */>}}
   {{</* card link="../callout" title="Card with default tag color" tag="tag text" */>}}
-  {{</* card link="../callout" title="Card with default red tag" tag="tag text" tagType="error" */>}}
-  {{</* card link="../callout" title="Card with blue tag" tag="tag text" tagType="info" */>}}
-  {{</* card link="../callout" title="Card with yellow tag" tag="tag text" tagType="warning" */>}}
+  {{</* card link="../callout" title="Card with red tag" tag="tag text" tagColor="red" */>}}
+  {{</* card link="../callout" title="Card with blue tag" tag="tag text" tagColor="blue" */>}}
+  {{</* card link="../callout" title="Card with yellow tag" tag="tag text" tagColor="yellow" tagIcon="sparkles" tagBorder=false */>}}
+  {{</* card link="/" title="Image Card" image="/images/card-image-unprocessed.jpg" subtitle="Image" tag="tag text" tagColor="green" */>}}
+  {{</* card link="/" title="Image Card" image="images/space.jpg" subtitle="Image" tag="tag text" tagColor="purple" tagIcon="sparkles" tagBorder=false */>}}
 {{</* /cards */>}}
 ```
 
